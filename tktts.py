@@ -22,6 +22,9 @@ ACC_FRENCH = "fr"
 
 
 class MainWindow(tk.Tk):
+    """
+    Our Tkinter Window wrapper class
+    """
     def __init__(self, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
         self.elements = { }
@@ -29,6 +32,10 @@ class MainWindow(tk.Tk):
 
 
     def configure_gui(self):
+        """
+        Build our GUI
+        """
+
 
         """
         Add Top-Left Label & Combobox for selecting Language
@@ -43,6 +50,7 @@ class MainWindow(tk.Tk):
                 row = 0, padx = 10, pady = 10)
         self.elements["comboLanguage"]['values'] = list(gtts.lang.tts_langs().keys())
         self.elements["comboLanguage"].current(self.elements["comboLanguage"]['values'].index('en'))
+
 
         """
         Add Top-Right Label & Combobox for selecting Accent
